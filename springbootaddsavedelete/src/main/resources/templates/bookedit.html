@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>EDIT BOOK</title>
+<style>
+	
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(45deg, #ff7e5f, #feb47b, #ffcb90);
+        margin: 0;
+        padding: 0;
+    }
+
+    form {
+        max-width: 400px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    input[type="hidden"] {
+        display: none;
+    }
+
+    button[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #45a049;
+    }
+</style>
+</style>
+</head>
+<body>
+    
+    <form action="/save" method="post" th:object="${book}">
+		<input type="hidden" name="id" th:value="${book.id}">
+		Name<input type="text" name="name" th:value="${book.name}"> <br>
+		Author<input type="text" name="author" th:value="${book.author}"><br>
+		Price<input type="text" name="price" th:value="${book.price}"><br>
+		<button type="submit">Submit</button>
+	</form>
+</body>
+</html>

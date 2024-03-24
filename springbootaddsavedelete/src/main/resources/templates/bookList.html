@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>list of books</title>
+<style>
+    body
+    {
+        background: linear-gradient(45deg, #ff7e5f, #feb47b, #ffcb90);
+    }
+    .center {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       height: 700px;
+    }
+
+    table {
+        width: 75%; /* Make the table fill its container */
+        border-collapse: collapse;
+        
+        background: linear-gradient(45deg, #ff7e5f, #feb47b, #ffcb90); /* Gradient background */
+    }
+
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    tr:hover {
+        background-color: #ddd;
+    }
+
+    td:nth-child(odd) {
+        background-color: #f9f9f9;
+    }
+
+    td:nth-child(even) {
+        background-color: #e9e9e9;
+    }
+</style>
+</head>
+<body>
+     
+</head>
+<body>
+    <div class="center">
+        <Table>
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="b :${homemodel}">
+                    <td th:text="${b.name}"></td>
+                    <td th:text="${b.author}"></td>
+                    <td th:text="${b.price}"></td>
+                </tr>
+               
+            </tbody>
+        </Table>
+    </div>
+</body>
+</html>
